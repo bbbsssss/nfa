@@ -1,0 +1,70 @@
+body {
+	font-family: monospace;
+	background-color: #36393f;
+	color: #dcddde;
+}
+h1 {
+	text-align: center;
+}
+label {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+select {
+	border-color: #dcddde;
+	background-color: transparent;
+	color: #dcddde;
+	font-weight: bold;
+	font-size: 1em;
+}
+option {
+	color: #36393f;
+}
+table {
+	margin: 1em 0;
+}
+th {
+	text-align: left;
+}
+tbody th {
+	font-size: 90%;
+	font-weight: normal;
+}
+table#emotes img {
+	height: 28px;
+}
+footer {
+	margin-top: 10em;
+}
+footer .nothing-finer,
+footer .than-scott-steiner {
+	position: absolute;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 250px;
+	width: 250px;
+}
+footer .nothing-finer {
+	background-image: url("ScottSteiner.png");
+	background-position: left bottom;
+	left: 0;
+}
+footer .than-scott-steiner {
+	background-image: url("roshi.png");
+	background-position: right bottom;
+	right: 0;
+}
+footer .nothing-finer::after,
+footer .than-scott-steiner::before {
+	position: absolute;
+	font-style: italic;
+	font-size: 90%
+}
+footer .nothing-finer::after {
+	content: "nothing finer";
+	left: 150px;
+}
+footer .than-scott-steiner::before {
+	content: "than ScottSteiner";
+	top: 1em;
+}

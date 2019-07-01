@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No Fun Allowed #general stats by roshi</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="scripts/vue-2.5.17.min.js"></script>
+	<script src="scripts/core-2.5.1.min.js"></script>
+	<script src="scripts/fetch-2.0.3.min.js"></script>
+</head>
+
+<body>
+	<h1>No Fun Allowed #general stats by roshi</h1>
+
+	<div id="stats">
+		<label for="month">Stats for </label>
+		<select id="month" v-model="selected" @change="getStats">
+			<option v-for="month in stats" :value="month.value">{{month.key}}</option>
+		</select>
+		
+		<table id="users">
+			<thead>
+				<tr><th colspan=5>Most Active Users</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th></th>
+					<th>User</th>
+					<th>Lines</th>
+					<th>Avg Words</th>
+					<th>Random quote</th>
+				</tr>
+				<tr v-for="(u, i) in users">
+					<td>{{i+1}}</td>
+					<td>{{u.user}}</td>
+					<td>{{u.lines}}</td>
+					<td>{{u.words}}</td>
+					<td>{{u.quote}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table id="mentions">
+			<thead>
+				<tr><th colspan=3>Mentions</th></tr>
+			</thead>
+			<tbody>
+				<tr v-for="(m, i) in mentions">
+					<td>{{i+1}}</td>
+					<td>{{m.user}}</td>
+					<td>{{m.count}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table id="words">
+			<thead>
+				<tr><th colspan=3>ShaoChat</th></tr>
+			</thead>
+			<tbody>
+				<tr v-for="(w, i) in words">
+					<td>{{i+1}}</td>
+					<td>{{w.word}}</td>
+					<td>{{w.count}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table id="emotes">
+			<thead>
+				<tr><th colspan=3>Emotes</th></tr>
+			</thead>
+			<tbody>
+				<tr v-for="(e, i) in emotes">
+					<td>{{i+1}}</td>
+					<td><img :src="'emotes/'+e.emote.replace(/:/g,'')+'.png'" :alt="e.emote" :title="e.emote"></td>
+					<td>{{e.count}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<footer>
+		<span class="nothing-finer"></span>
+		<span class="than-scott-steiner"></span>
+	</footer>
+
+	<script src="stats.vue.js"></script>
+</body>
+</html>
