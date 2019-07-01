@@ -6,6 +6,7 @@ new Vue({
 		words: [],
 		emotes: [],
 		stats: [
+			{ key: '2019-06', value: 'nofungeneral1906' },
 			{ key: '2019-05', value: 'nofungeneral1905' },
 			{ key: '2019-04', value: 'nofungeneral1904' },
 			{ key: '2019-03', value: 'nofungeneral1903' },
